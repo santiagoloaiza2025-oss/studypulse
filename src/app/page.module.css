@@ -1,0 +1,1414 @@
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 255, 255, 0.02) 0px, transparent 50%);
+  color: var(--text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 10;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.logoIcon {
+  color: var(--accent);
+  width: 32px;
+  height: 32px;
+  transition: color 0.4s ease;
+}
+
+.xpBadgeSidebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--warning);
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.navLinks {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navBottom {
+  margin-top: auto;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navItem:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navItemActive {
+  color: var(--text);
+}
+
+.activeIndicator {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  z-index: -1;
+  transition: border-color 0.4s ease;
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px;
+  position: relative;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.glassCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.colSpan2 {
+  grid-column: span 2;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.icon {
+  color: var(--accent);
+  transition: color 0.4s ease;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Tasks */
+.advancedTaskForm {
+  background: rgba(0,0,0,0.05);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: flex-start;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.formGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input, .select, .textarea {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, background-color 0.4s ease, color 0.4s ease;
+  font-family: inherit;
+  width: 100%;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--accent);
+}
+
+.select option {
+  background-color: var(--bg-elevated);
+  color: var(--text);
+}
+
+.emojiSelector {
+  display: flex;
+  gap: 8px;
+  background: rgba(0,0,0,0.05);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.emojiBtn {
+  font-size: 20px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.emojiBtn:hover {
+  background: rgba(128,128,128,0.2);
+}
+
+.emojiBtnActive {
+  background: rgba(128,128,128,0.3);
+  border: 1px solid var(--accent);
+}
+
+.primaryBtn {
+  background: var(--accent);
+  color: var(--btn-text);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sectionHeading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.taskGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.advancedTaskItem {
+  background: rgba(128, 128, 128, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.advancedTaskItem:hover {
+  background: rgba(128, 128, 128, 0.1);
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+}
+
+.taskItemDone {
+  opacity: 0.5;
+}
+
+.taskHeader {
+  margin-bottom: 16px;
+}
+
+.taskTitleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.taskEmojiBox {
+  font-size: 24px;
+  background: rgba(128,128,128,0.1);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.deleteBtn {
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: var(--danger);
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.checkIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.advancedTaskItem:hover .checkIcon {
+  color: var(--success);
+}
+
+.taskTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  display: block;
+  word-break: break-word;
+}
+
+.taskDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.taskMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag, .priorityTag, .dateTag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.tag {
+  background: rgba(128,128,128,0.15);
+  color: var(--text-muted);
+}
+
+.dateTag {
+  background: rgba(128,128,128,0.2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.priorityTag {
+  background: transparent;
+  border: 1px solid;
+  text-transform: capitalize;
+}
+
+.emptyState {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 40px;
+  font-style: italic;
+  grid-column: 1 / -1;
+  background: rgba(128,128,128,0.05);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border);
+}
+
+/* Pomodoro Tab */
+.pomodoroHeaderOptions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  background: rgba(128,128,128,0.1);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.pomoTypeBtn {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-weight: 600;
+  transition: all 0.2s;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.pomoTypeActive {
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.customPomodoroForm {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  background: rgba(128,128,128,0.05);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.pomodoroLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.pomodoroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 20px;
+  background: rgba(128,128,128,0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+.pomodoroMode {
+  display: flex;
+  background: rgba(128,128,128,0.15);
+  border-radius: var(--radius-pill);
+  padding: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.modeBtn {
+  padding: 10px 32px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.modeActive {
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.timerCircle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circularProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.circleBg {
+  fill: none;
+  stroke: rgba(128,128,128,0.2);
+  stroke-width: 4;
+}
+
+.circleFill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  transition: stroke 0.4s ease, stroke-dashoffset 0.4s ease;
+}
+
+.timerText {
+  font-size: 64px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -2px;
+  z-index: 2;
+}
+
+.playBtnLarge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--accent);
+  color: var(--btn-text);
+  padding: 16px 40px;
+  border-radius: var(--radius-pill);
+  font-size: 18px;
+  font-weight: 700;
+  transition: transform 0.1s, background 0.2s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+}
+
+.playBtnLarge:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.playBtnLarge:active {
+  transform: scale(0.95);
+}
+
+.focusTaskContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.achievementsBoxBig {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-lg);
+  color: var(--warning);
+}
+
+.achievementsLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievementsValue {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.focusTaskSelector h3 {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.focusTaskList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.focusTaskItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(128,128,128,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.focusTaskItem:hover {
+  background: rgba(128,128,128,0.1);
+}
+
+.focusTaskSelected {
+  background: rgba(128,128,128,0.15);
+  border-color: var(--accent);
+}
+
+.focusEmoji {
+  font-size: 24px;
+}
+
+.focusTitle {
+  font-weight: 600;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+/* Games Tab */
+.gamesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.gameCard {
+  background: rgba(128,128,128,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  transition: transform 0.2s;
+}
+
+.gameCard:hover {
+  transform: translateY(-4px);
+}
+
+.gameEmoji {
+  font-size: 64px;
+}
+
+.gameCard p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.gameArea {
+  background: rgba(0,0,0,0.2);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.snakeGrid {
+  display: grid;
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+  padding: 1px;
+  border: 2px solid var(--border);
+  width: min(100%, 350px);
+  aspect-ratio: 1/1;
+}
+
+.snakeCell {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.snakeBody {
+  background: var(--success);
+  border-radius: 4px;
+}
+
+.snakeFood {
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.wallCell {
+  background: var(--border);
+}
+
+.tictactoeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  background: var(--border);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  width: min(100%, 300px);
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+}
+
+.tttCell {
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  overflow: hidden;
+}
+
+.tttCell:hover {
+  background: var(--bg-elevated);
+}
+
+.memoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: min(100%, 350px);
+  margin: 0 auto;
+}
+
+.memoryCard {
+  aspect-ratio: 1/1;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.memoryCardFlipped {
+  background: var(--bg-elevated);
+  transform: rotateY(180deg);
+  border-color: var(--accent);
+}
+
+.tagActive {
+  background: var(--accent);
+  color: var(--btn-text);
+  border-color: var(--accent);
+}
+
+/* Mood */
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.moodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.moodBtn {
+  background: rgba(128,128,128,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.moodBtn:hover {
+  background: rgba(128,128,128,0.1);
+  transform: translateY(-4px);
+}
+
+.moodSelected {
+  background: rgba(128,128,128,0.15);
+  border-color: var(--accent);
+}
+
+.moodEmoji {
+  font-size: 48px;
+}
+
+.moodLabel {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.moodSelected .moodLabel {
+  color: var(--text);
+}
+
+.moodNoteContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.historyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(128,128,128,0.05);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  transition: border-color 0.4s ease;
+}
+
+.historyTime {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  width: 50px;
+}
+
+.historyEmoji {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.historyContent {
+  flex: 1;
+}
+
+.historyNote {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 4px;
+  font-style: italic;
+  word-break: break-word;
+}
+
+/* AI Chat */
+.chatContainer {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  height: 700px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.chatHeader {
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(128,128,128,0.05);
+}
+
+.chatMessages {
+  flex: 1;
+  padding: 32px 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.messageWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.messageUserWrapper {
+  justify-content: flex-end;
+}
+
+.aiAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.message {
+  max-width: 75%;
+  padding: 16px 20px;
+  border-radius: var(--radius-lg);
+  line-height: 1.6;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.messageAI {
+  background: rgba(128,128,128,0.1);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+
+.messageUser {
+  background: var(--accent);
+  color: var(--btn-text);
+  border-bottom-right-radius: 4px;
+}
+
+.chatInputForm {
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  background: rgba(128,128,128,0.05);
+}
+
+.chatInput {
+  flex: 1;
+  background: rgba(128,128,128,0.1);
+  border: 1px solid var(--border);
+  padding: 16px 24px;
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  outline: none;
+  font-size: 15px;
+}
+
+.chatInput:focus {
+  border-color: var(--accent);
+}
+
+.chatSendBtn {
+  width: 54px;
+  height: 54px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--btn-text);
+  transition: transform 0.2s;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.chatSendBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Settings Theme Selection */
+.themeSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.themeBtn {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(128,128,128,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.themeBtn:hover {
+  background: rgba(128,128,128,0.15);
+}
+
+.themeBtnActive {
+  background: rgba(128,128,128,0.25);
+  border-color: var(--text);
+  color: var(--text);
+}
+
+
+/* Mobile */
+.mobileHeader {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.menuButton {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+}
+
+.mobileNav {
+  display: none;
+  background: var(--bg-elevated);
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none;
+  }
+  .mobileHeader, .mobileNav {
+    display: flex;
+  }
+  .mainContent {
+    padding: 16px;
+  }
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+  .colSpan2 {
+    grid-column: span 1;
+  }
+  .formRow {
+    flex-direction: column;
+  }
+  .customPomodoroForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .customPomodoroForm .primaryBtn {
+    width: 100%;
+  }
+  .timerCircle {
+    width: 220px;
+    height: 220px;
+  }
+  .timerText {
+    font-size: 48px;
+  }
+  .moodGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pomodoroLayout {
+    grid-template-columns: 1fr;
+  }
+  .taskGrid {
+    grid-template-columns: 1fr;
+  }
+  .chatContainer {
+    height: 600px;
+  }
+  .message {
+    max-width: 90%;
+  }
+}
+
+
+/* Differentiators CSS */
+.focusSoundsWidget {
+  margin-top: 24px;
+  background: rgba(128,128,128,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.soundControls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.soundBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(128,128,128,0.1);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.soundBtn:hover {
+  background: rgba(128,128,128,0.2);
+  transform: translateY(-2px);
+}
+
+.soundBtnActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.soundOffBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,0,0,0.1);
+  color: var(--danger);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+
+.soundOffBtn:hover {
+  background: rgba(255,0,0,0.2);
+}
+
+.mobileSounds {
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+/* Zen Mode */
+.zenContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--bg);
+  z-index: 9999;
+}
+
+.exitZenBtn {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(128,128,128,0.1);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.exitZenBtn:hover {
+  background: rgba(128,128,128,0.2);
+  color: var(--text);
+}
+
+.zenToggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(128,128,128,0.1);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.zenToggleBtn:hover {
+  background: rgba(128,128,128,0.2);
+  transform: translateY(-2px);
+}
+
+.aiSuggestBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.aiSuggestBtn:hover {
+  background: rgba(168, 85, 247, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Toast & Modal */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  color: white;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+.toast-info { background: var(--accent); }
+.toast-success { background: var(--success); }
+.toast-error { background: var(--danger); }
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modalContent {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.modalCloseBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modalCloseBtn:hover {
+  color: var(--text);
+}
+
+.modalTitle {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.modalText {
+  color: var(--text-muted);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Mascot Virtual */
+.mascotContainer {
+  margin: 16px 24px;
+  padding: 16px;
+  background: rgba(128,128,128,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  cursor: help;
+}
+
+.mascotEmoji {
+  font-size: 36px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+.mascotInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.mascotName {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.mascotXP {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mascotTooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+  margin-top: 8px;
+}
+
+.mascotContainer:hover .mascotTooltip {
+  opacity: 1;
+}
+
+/* Tic Tac Toe Scoreboard */
+.tttScoreboard {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  background: rgba(128,128,128,0.05);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.bigMascot {
+  font-size: 160px;
+  animation: floatBig 4s ease-in-out infinite;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  line-height: 1;
+}
+
+@keyframes floatBig {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-12px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
+}
