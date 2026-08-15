@@ -1414,3 +1414,65 @@
   50% { transform: translateY(-12px) scale(1.05); }
   100% { transform: translateY(0px) scale(1); }
 }
+
+@media (max-width: 768px) {
+  .dashboardGrid {
+    gap: 16px;
+  }
+  .taskGrid {
+    gap: 12px;
+  }
+  .cardTitle {
+    font-size: 16px;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .primaryBtn, .secondaryBtn, .dangerBtn, .iconBtn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .timerText {
+    font-size: 36px !important;
+  }
+  .timerCircle {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .snakeGrid, .tictactoeGrid, .memoryGrid {
+    gap: 2px !important;
+  }
+  .snakeCell, .tictactoeCell, .memoryCard {
+    min-height: 40px !important;
+  }
+  .statCard {
+    padding: 12px;
+  }
+  .statValue {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 12px !important;
+  }
+  .card, .statCard, .glass {
+    padding: 16px !important;
+  }
+  .snakeGrid {
+    width: 100% !important;
+    aspect-ratio: 1;
+  }
+  .tictactoeGrid {
+    width: 100% !important;
+    aspect-ratio: 1;
+  }
+  .memoryGrid {
+    width: 100% !important;
+    aspect-ratio: 1;
+  }
+}
